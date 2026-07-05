@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel de Administración</title>
+    <link rel="stylesheet" th:href="@{/css/menu.css}">
+</head>
+<body>
+<div class="menu-container">
+    <h2>👑 Panel de Administración</h2>
+
+    <nav>
+        <ul>
+            <li><a th:href="@{/admin/clientes}">📂 Gestionar Clientes</a></li>
+            <li><a th:href="@{/admin/empleados}">👨‍💼 Gestionar Empleados</a></li>
+            <li><a th:href="@{/admin/proyectos}">📊 Gestionar Proyectos</a></li>
+            <li><a th:href="@{/admin/perfiles}">📝 Gestionar Perfiles</a></li>
+            <li><a th:href="@{/admin/reportes}">📑 Generar Reportes</a></li> <!-- NUEVO -->
+        </ul>
+    </nav>
+
+    <form th:action="@{/logout}" method="post">
+        <button type="submit" class="btn">Cerrar sesión</button>
+    </form>
+</div>
+</body>
+</html>

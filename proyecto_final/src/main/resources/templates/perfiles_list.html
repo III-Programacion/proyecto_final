@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Perfiles</title></head>
+<body>
+<h2>Lista de Perfiles</h2>
+<a th:href="@{/admin/perfiles/nuevo}">➕ Nuevo Perfil</a>
+<table border="1">
+    <tr>
+        <th>ID</th><th>Cargo</th><th>Teléfono</th><th>Acciones</th>
+    </tr>
+    <tr th:each="p : ${perfiles}">
+        <td th:text="${p.id}"></td>
+        <td th:text="${p.cargo}"></td>
+        <td th:text="${p.telefono}"></td>
+        <td>
+            <a th:href="@{'/admin/perfiles/editar/' + ${p.id}}">Editar</a> |
+            <a th:href="@{'/admin/perfiles/eliminar/' + ${p.id}}">Eliminar</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Formulario Perfil</title></head>
+<body>
+<h2>Formulario Perfil</h2>
+<form th:action="@{/admin/perfiles}" th:object="${perfil}" method="post">
+    <input type="hidden" th:field="*{id}">
+    <label>Cargo:</label>
+    <input type="text" th:field="*{cargo}" required><br>
+    <label>Teléfono:</label>
+    <input type="text" th:field="*{telefono}" required><br>
+    <button type="submit">Guardar</button>
+</form>
+</body>
+</html>

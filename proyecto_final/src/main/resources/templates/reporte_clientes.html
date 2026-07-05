@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Reporte de Clientes</title>
+</head>
+<body>
+<h2>📂 Reporte de Clientes</h2>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Empresa</th>
+    </tr>
+    <tr th:each="c : ${clientes}">
+        <td th:text="${c.id}"></td>
+        <td th:text="${c.nombre}"></td>
+        <td th:text="${c.empresa}"></td>
+    </tr>
+</table>
+</body>
+</html>

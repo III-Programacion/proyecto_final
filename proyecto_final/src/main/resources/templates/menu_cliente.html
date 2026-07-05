@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Menú Cliente</title>
+    <link rel="stylesheet" th:href="@{/css/menu.css}">
+    <script th:src="@{/js/menu.js}" defer></script>
+</head>
+<body>
+<div class="menu-container">
+    <h2>💼 Panel de Cliente</h2>
+    <ul>
+        <li><a href="/cliente/proyectos">Proyectos Contratados</a></li>
+        <li><a href="/cliente/reportes">Reportes</a></li>
+    </ul>
+    <form th:action="@{/logout}" method="post">
+        <button type="submit" class="btn logout">Cerrar sesión</button>
+    </form>
+</div>
+</body>
+</html>

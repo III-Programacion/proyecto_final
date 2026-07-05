@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Reporte de Proyectos</title>
+</head>
+<body>
+<h2>📊 Reporte de Proyectos</h2>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Cliente</th>
+        <th>Empleados</th>
+    </tr>
+    <tr th:each="p : ${proyectos}">
+        <td th:text="${p.id}"></td>
+        <td th:text="${p.nombre}"></td>
+        <td th:text="${p.descripcion}"></td>
+        <td th:text="${p.cliente != null ? p.cliente.nombre : 'Sin cliente'}"></td>
+        <td>
+            <span th:each="e : ${p.empleados}" th:text="${e.nombre} + ' '" />
+        </td>
+    </tr>
+</table>
+</body>
+</html>

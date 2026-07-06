@@ -1,86 +1,77 @@
 # Proyecto Final — Aplicación Web Empresarial (CodeHub)
 
 ## 📖 Tema
-**Proyecto Final — Desarrollo de una aplicación web empresarial con seguridad, relaciones entre entidades y generación de reportes**
+**Desarrollo de una aplicación web empresarial con seguridad, relaciones entre entidades y generación de reportes**
 
 ---
 
 ## 📝 Descripción
-Este proyecto consiste en el desarrollo de una aplicación web orientada a la gestión interna de **CodeHub**, una empresa de desarrollo de software que necesita administrar:
+Este proyecto consiste en una aplicación web para la gestión interna de **CodeHub**, empresa de desarrollo de software que administra:
 
-- Sus **proyectos**
-- Los **empleados** que participan en ellos
-- Los **clientes** que los contratan
+- **Proyectos**
+- **Empleados**
+- **Clientes**
 
-El sistema incluye:
+Incluye:
 - Autenticación de usuarios
-- Control de acceso según roles (`ADMIN`, `MANAGER`, `EMPLOYEE`)
-- Manejo de relaciones entre entidades del negocio
-- Generación de reportes en formato **PDF**
+- Control de acceso por roles (`ADMIN`, `MANAGER`, `EMPLOYEE`)
+- Relaciones entre entidades
+- Reportes en **PDF**
 - Pruebas de APIs con **Postman**
-- Control de versiones y documentación en **GitHub**
+- Control de versiones en **GitHub**
 
 ---
 
 ## 🎯 Planteamiento del problema
-Las empresas de desarrollo de software requieren sistemas internos que permitan:
-- Gestionar clientes y proyectos de manera organizada.
-- Asignar empleados a proyectos según sus perfiles.
-- Controlar accesos y permisos según el rol del usuario.
-- Generar reportes que faciliten la toma de decisiones.
-- Reducir el uso de papel mediante reportes digitales, contribuyendo a la sostenibilidad.
+Las empresas de software necesitan sistemas que permitan:
+- Gestionar clientes y proyectos de forma organizada.  
+- Asignar empleados según perfiles.  
+- Controlar accesos según roles.  
+- Generar reportes confiables.  
+- Reducir uso de papel mediante digitalización.  
 
 ---
 
 ## 🎯 Objetivos
-
-### Objetivo general
-Desarrollar una aplicación web empresarial con autenticación de usuarios, gestión de proyectos, clientes y empleados, y generación de reportes en PDF.
-
-### Objetivos específicos
-- Implementar un sistema web seguro con autenticación y roles.  
-- Modelar las relaciones entre entidades:  
-  - Un empleado tiene un perfil asociado.  
-  - Un cliente puede tener varios proyectos.  
-  - Un proyecto puede contar con varios empleados asignados.  
-- Permitir CRUD completo de clientes, empleados y proyectos.  
-- Generar reportes dinámicos y exportables en PDF.  
-- Documentar y versionar el proyecto en **GitHub**.  
-- Validar las APIs REST con **Postman**.  
+- **General:** Desarrollar una aplicación web empresarial con autenticación, gestión de proyectos/clientes/empleados y reportes en PDF.  
+- **Específicos:**  
+  - Implementar seguridad y roles.  
+  - Modelar relaciones entre entidades.  
+  - CRUD completo de clientes, empleados y proyectos.  
+  - Generar reportes dinámicos en PDF.  
+  - Versionar en **GitHub** y validar APIs con **Postman**.  
 
 ---
 
-## 🛠️ Tecnologías utilizadas
-- **Java 17**
-- **Spring Boot 3.x**
-- **Spring Security**
-- **Thymeleaf**
-- **Hibernate / JPA**
-- **PostgreSQL** (base de datos principal)
-- **Maven**
-- **IntelliJ IDEA**
-- **GitHub** (repositorio remoto y control de versiones)
-- **Postman** (pruebas de APIs REST)
+## 🛠️ Tecnologías
+- Java 17  
+- Spring Boot 3.x  
+- Spring Security  
+- Thymeleaf  
+- Hibernate / JPA  
+- PostgreSQL  
+- Maven  
+- IntelliJ IDEA  
+- GitHub  
+- Postman  
 
 ---
 
 ## 🗂️ Diseño del sistema
-
 ### Modelo de datos
 - **Empleado**: `id`, `nombre`, `email`, relación con `Perfil` y `Proyecto`.  
-- **Perfil**: describe cargo y habilidades.  
+- **Perfil**: cargo y habilidades.  
 - **Cliente**: `id`, `nombre`, `empresa`, relación con `Proyecto`.  
 - **Proyecto**: `id`, `nombre`, `descripcion`, relación con `Cliente` y `Empleado`.  
 
 ### Relaciones
-- `Empleado` ↔ `Perfil` → OneToOne  
-- `Cliente` ↔ `Proyecto` → OneToMany  
-- `Proyecto` ↔ `Empleado` → ManyToMany  
+- Empleado ↔ Perfil → OneToOne  
+- Cliente ↔ Proyecto → OneToMany  
+- Proyecto ↔ Empleado → ManyToMany  
 
 ---
 
-## 📊 Diagrama ERD (Entidad-Relación)
-
+## 📊 Diagrama ERD
 ```plantuml
 @startuml
 entity Cliente {
@@ -111,33 +102,3 @@ Cliente ||--o{ Proyecto : "tiene"
 Proyecto }o--o{ Empleado : "asigna"
 Empleado ||--|| Perfil : "posee"
 @enduml
-
----
-
-🚀 Instrucciones de uso
-Requisitos previos
-Java 17+
-
-Maven
-
-PostgreSQL
-
-IntelliJ IDEA
-
-Postman (para pruebas de APIs)
-
-GitHub (para clonar y versionar el repositorio)
-
-Clonar el repositorio
-bash
-git clone https://github.com/III-Programacion/proyecto_final.git
-cd proyecto_final
-Configurar la base de datos
-En application.properties:
-
-properties
-spring.datasource.url=jdbc:postgresql://localhost:5432/proyecto_final
-spring.datasource.username=tu_usuario
-spring.datasource.password=tu_password
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect

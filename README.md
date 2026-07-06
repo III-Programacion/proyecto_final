@@ -1,104 +1,72 @@
-# Proyecto Final — Aplicación Web Empresarial (CodeHub)
+Proyecto Final — Aplicación Web Empresarial (CodeHub)
+📖 Tema
+Desarrollo de una aplicación web empresarial con seguridad, relaciones entre entidades y generación de reportes.
 
-## 📖 Tema
-**Desarrollo de una aplicación web empresarial con seguridad, relaciones entre entidades y generación de reportes**
+📝 Resumen
+Como parte de mi formación en desarrollo de software, desarrollé CodeHub, una aplicación web empresarial orientada a la gestión interna de proyectos, clientes y empleados. El sistema integra autenticación de usuarios, control de acceso por roles (ADMIN, MANAGER, EMPLOYEE), manejo de relaciones entre entidades y generación de reportes en PDF. Además, validé las APIs con Postman y versioné el proyecto en GitHub.
 
----
+🎯 Problema y objetivos
+Las empresas de software requieren sistemas que permitan organizar clientes y proyectos, asignar empleados según perfiles, controlar accesos y generar reportes confiables, reduciendo el uso de papel.
 
-## 📝 Descripción
-Este proyecto consiste en una aplicación web para la gestión interna de **CodeHub**, empresa de desarrollo de software que administra:
+Objetivo general: Crear una aplicación web empresarial segura con gestión de proyectos, clientes y empleados, y reportes en PDF.
 
-- **Proyectos**
-- **Empleados**
-- **Clientes**
+Objetivos específicos:
 
-Incluye:
-- Autenticación de usuarios
-- Control de acceso por roles (`ADMIN`, `MANAGER`, `EMPLOYEE`)
-- Relaciones entre entidades
-- Reportes en **PDF**
-- Pruebas de APIs con **Postman**
-- Control de versiones en **GitHub**
+Implementar autenticación y roles.
 
----
+Modelar relaciones entre entidades en PostgreSQL.
 
-## 🎯 Planteamiento del problema
-Las empresas de software necesitan sistemas que permitan:
-- Gestionar clientes y proyectos de forma organizada.  
-- Asignar empleados según perfiles.  
-- Controlar accesos según roles.  
-- Generar reportes confiables.  
-- Reducir uso de papel mediante digitalización.  
+CRUD completo de clientes, empleados y proyectos.
 
----
+Generar reportes dinámicos en PDF.
 
-## 🎯 Objetivos
-- **General:** Desarrollar una aplicación web empresarial con autenticación, gestión de proyectos/clientes/empleados y reportes en PDF.  
-- **Específicos:**  
-  - Implementar seguridad y roles.  
-  - Modelar relaciones entre entidades.  
-  - CRUD completo de clientes, empleados y proyectos.  
-  - Generar reportes dinámicos en PDF.  
-  - Versionar en **GitHub** y validar APIs con **Postman**.  
+Versionar en GitHub y validar APIs con Postman.
 
----
+🛠️ Tecnologías
+Java 17 · Spring Boot · Spring Security · Thymeleaf · Hibernate/JPA · PostgreSQL · Maven · IntelliJ IDEA · GitHub · Postman
 
-## 🛠️ Tecnologías
-- Java 17  
-- Spring Boot 3.x  
-- Spring Security  
-- Thymeleaf  
-- Hibernate / JPA  
-- PostgreSQL  
-- Maven  
-- IntelliJ IDEA  
-- GitHub  
-- Postman  
+🗂️ Diseño del sistema
+Cliente ↔ Proyecto → OneToMany
 
----
+Proyecto ↔ Empleado → ManyToMany
 
-## 🗂️ Diseño del sistema
-### Modelo de datos
-- **Empleado**: `id`, `nombre`, `email`, relación con `Perfil` y `Proyecto`.  
-- **Perfil**: cargo y habilidades.  
-- **Cliente**: `id`, `nombre`, `empresa`, relación con `Proyecto`.  
-- **Proyecto**: `id`, `nombre`, `descripcion`, relación con `Cliente` y `Empleado`.  
+Empleado ↔ Perfil → OneToOne
 
-### Relaciones
-- Empleado ↔ Perfil → OneToOne  
-- Cliente ↔ Proyecto → OneToMany  
-- Proyecto ↔ Empleado → ManyToMany  
+🚀 Implementación
+Configuré el entorno en IntelliJ IDEA con Maven.
 
----
+Creé entidades principales (Cliente, Empleado, Proyecto).
 
-## 📊 Diagrama ERD
-```plantuml
-@startuml
-entity Cliente {
-  *id : int
-  nombre : string
-  empresa : string
-}
+Implementé relaciones JPA.
 
-entity Proyecto {
-  *id : int
-  nombre : string
-  descripcion : string
-}
+Configuré seguridad con Spring Security.
 
-entity Empleado {
-  *id : int
-  nombre : string
-  email : string
-}
+Desarrollé controladores y vistas con Thymeleaf.
 
-entity Perfil {
-  *id : int
-  cargo : string
-  habilidades : string
-}
+Generé reportes en HTML y PDF.
 
-Cliente ||--o{ Proyecto : "tiene"
-Proyecto }o--o{ Empleado : "asigna"
-Empleado ||--|| Perfil : "posee"
-@enduml
+Probé APIs con Postman y datos en PostgreSQL.
+
+Subí el proyecto a GitHub.
+
+📈 Resultados
+Sistema funcional con autenticación y roles.
+
+CRUD completo de clientes, empleados y proyectos.
+
+Reportes dinámicos en PDF.
+
+Integración con PostgreSQL.
+
+Pruebas exitosas con Postman.
+
+Proyecto documentado en GitHub.
+
+✅ Conclusiones
+El sistema satisface la gestión interna de CodeHub.
+
+Seguridad y roles garantizan acceso controlado.
+
+Reportes digitales reducen uso de papel (ODS 12).
+
+GitHub y Postman fortalecen buenas prácticas de desarrollo.

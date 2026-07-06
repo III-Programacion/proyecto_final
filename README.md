@@ -111,3 +111,84 @@ Cliente ||--o{ Proyecto : "tiene"
 Proyecto }o--o{ Empleado : "asigna"
 Empleado ||--|| Perfil : "posee"
 @enduml
+🚀 Instrucciones de uso
+Requisitos previos
+Java 17+
+
+Maven
+
+PostgreSQL
+
+IntelliJ IDEA
+
+Postman (para pruebas de APIs)
+
+GitHub (para clonar y versionar el repositorio)
+
+Clonar el repositorio
+bash
+git clone https://github.com/III-Programacion/proyecto_final.git
+cd proyecto_final
+Configurar la base de datos
+En application.properties:
+
+properties
+spring.datasource.url=jdbc:postgresql://localhost:5432/proyecto_final
+spring.datasource.username=tu_usuario
+spring.datasource.password=tu_password
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+Ejecutar la aplicación
+bash
+mvn spring-boot:run
+La aplicación estará disponible en:
+
+Código
+http://localhost:8080
+📊 Reportes
+Reporte de Clientes
+
+Reporte de Empleados
+
+Reporte de Proyectos
+
+Exportación a PDF
+
+📂 Estructura del proyecto
+Código
+src/main/java/com/fernando6489/proyecto_final/
+ ├── controller/
+ ├── model/
+ ├── repository/
+ ├── service/
+ └── security/
+src/main/resources/
+ ├── templates/
+ └── static/
+📈 Resultados obtenidos
+Sistema funcional con autenticación y roles.
+
+CRUD completo para clientes, empleados y proyectos.
+
+Reportes dinámicos unificados en una sola vista (reporte.html).
+
+Exportación de información relevante a PDF.
+
+Integración con PostgreSQL como base de datos principal.
+
+Pruebas exitosas de APIs con Postman.
+
+Proyecto documentado y versionado en GitHub.
+
+✅ Conclusiones
+El sistema satisface las necesidades de gestión interna de CodeHub.
+
+La seguridad y roles garantizan un acceso controlado.
+
+La unificación de reportes mejora la mantenibilidad.
+
+El uso de Spring Boot, Thymeleaf y PostgreSQL facilita la escalabilidad.
+
+La integración con GitHub y Postman asegura buenas prácticas de desarrollo y pruebas.
+
+El proyecto contribuye a la sostenibilidad al reducir el uso de papel mediante reportes digitales (ODS 12: Producción y consumo responsables).

@@ -112,6 +112,8 @@ Proyecto }o--o{ Empleado : "asigna"
 Empleado ||--|| Perfil : "posee"
 @enduml
 
+---
+
 🚀 Instrucciones de uso
 Requisitos previos
 Java 17+
